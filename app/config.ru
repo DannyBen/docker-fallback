@@ -3,7 +3,7 @@ require 'rack'
 class Fallback
   class << self
     def call(env)
-      return [200, {'Content-Type' => 'text/html'}, ['OK']] if env['PATH_INFO'] == '/health_check'
+      return [200, {'Content-Type' => 'text/plain'}, ['OK']] if env['PATH_INFO'] == '/health_check'
 
       if env['PATH_INFO'] =~ /^\/\d{3}/
         code = env['PATH_INFO'][1..3]
