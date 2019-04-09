@@ -34,7 +34,7 @@ or with plain docker
     $ docker run --rm -it -p 3000:3000 dannyben/fallback
 
 
-### View th epages
+### View the pages
 
 Then you can test HTTP codes by either passing them in the path:
 
