@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="Expires" content="-1">
+    <title>%{code} %{message}</title>
+
+    <style type="text/css">
+      * {
+        font-family: Calibri, Helvetica, Arial, sans-serif;
+      }
+
+      body, html {
+        background-color: #EFF8E2;
+        margin: 0; padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      #dialog {
+        text-align: center;
+        margin-top: 20vh;
+        min-width: 300px;
+      }
+
+      #code {
+        color: #CECFC7;
+        font-size: 20vh;
+        font-weight: bold;
+      }
+
+      #message {
+        color: #ADA8B6;
+        font-size: 8vh;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id='dialog'>
+      <div id='code'>%{code}</div>
+      <div id='message'>%{message}</div>
+    </div>
+  </body>
+</html>
+
