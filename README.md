@@ -1,4 +1,4 @@
-Fallback - Default Ingres Backend
+Fallback - Default Ingress Backend
 ==================================================
 
 This is a simple docker image intended to be used as a default backend to
