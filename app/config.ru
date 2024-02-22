@@ -22,7 +22,7 @@ class Fallback
 
       code = code.to_i
       code = 500 unless (200..599).include? code
-      [code, {'Content-Type' => 'text/html'}, [body]]
+      [code, {'content-type' => 'text/html'}, [body]]
     end
 
   private
