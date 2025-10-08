@@ -1,5 +1,4 @@
-Fallback - Default Ingress Backend
-==================================================
+# Fallback - Default Ingress Backend
 
 This is a simple docker image intended to be used as a default backend to
 an nginx proxy.
@@ -12,8 +11,7 @@ an nginx proxy.
 ---
 
 
-Usage
---------------------------------------------------
+## Usage
 
 ### Start the server
 
