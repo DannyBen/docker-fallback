@@ -6,12 +6,11 @@ on:
       tag:
         description: Tag to build
         required: true
-        default: '3.4'
+        default: 'v26.02.19'
 
   push:
     tags:
-      - '[0-9]+.[0-9]+'
-      - '[0-9]+.[0-9]+.[0-9]+'
+      - 'v[0-9][0-9].[0-9][0-9].[0-9][0-9]'
 
 jobs:
   docker:
@@ -28,6 +27,9 @@ jobs:
       - name: Set tag from input
         if: github.event_name == 'workflow_dispatch'
         run: echo "TAG=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+
+      - name: Set SHA tag
+        run: echo "SHA_TAG=sha-${GITHUB_SHA::7}" >> $GITHUB_ENV
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -48,5 +50,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            dannyben/alpine-ruby
-            dannyben/alpine-ruby:${{ env.TAG }}
+            dannyben/fallback
+            dannyben/fallback:${{ env.TAG }}
+            dannyben/fallback:${{ env.SHA_TAG }}
