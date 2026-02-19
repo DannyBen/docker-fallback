@@ -32,21 +32,15 @@ class Fallback
     end
 
     def codes
-      @codes ||= {
-        '200' => "OK",
-        '400' => "Bad Request",
-        '401' => "Unauthorized",
-        '403' => "Forbidden",
-        '404' => "Not Found",
-        '406' => "Not Acceptable",
-        '413' => "Payload Too Large",
-        '500' => "Application Error",
-        '502' => "Bad Gateway",
-        '503' => "Service Unavailable",
-        '504' => "Gateway Timeout",
-      }
+      @codes ||= codes!
     end
 
+    def codes!
+      Rack::Utils::HTTP_STATUS_CODES.each_with_object({}) do |(status, message), result|
+        next unless (200..599).include?(status)
+        result[status.to_s] = message
+      end
+    end
   end
 end
 
