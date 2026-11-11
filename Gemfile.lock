@@ -4,7 +4,7 @@ GEM
     nio4r (2.7.5)
     puma (8.0.2)
       nio4r (~> 2.0)
-    rack (3.2.6)
+    rack (3.2.8)
     rackup (2.3.1)
       rack (>= 3)
 
@@ -18,4 +18,4 @@ DEPENDENCIES
   rackup
 
 BUNDLED WITH
-  4.0.13
+  4.0.19
